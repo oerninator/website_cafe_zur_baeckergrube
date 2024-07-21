@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angebot</title>
+    <!-- Hier können weitere Meta-Tags, Stylesheets und Skripte eingefügt werden -->
+    <style>
+        /* Hier können benutzerdefinierte CSS-Stile eingefügt werden */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #000;
+            margin-bottom: 0.5em;
+        }
+
+        header nav {
+            margin-top: 0.8em; /* Erhöhter Abstand zwischen den Links */
+        }
+
+        header a {
+            color: #000000; /* Geänderte Linkfarbe */
+            text-decoration: none;
+            margin: 0.5em; /* Erhöhter Abstand zwischen den Links */
+        }
+
+        hr {
+            margin: 1em 0;
+            border: none;
+            border-top: 2px solid #333;
+        }
+
+        #main_container {
+            width: 94%;
+            margin: 0 auto;
+        }
+
+        main {
+            padding: 1em;
+            display: flex;
+            flex-wrap: wrap; /* Geändert: Erlaubt Umbruch auf die nächste Zeile */
+            justify-content: center; /* Zentriert die Bilder horizontal */
+            align-items: center;
+        }
+
+        #bildContainer, #text_block {
+            width: 48%; /* Hinzugefügt: Jedes Kind nimmt 48% der Breite ein */
+        }
+
+        #kirschstreuselkuchen img {
+            width: 100%; /* Ändere dies auf 100%, wenn du möchtest, dass das Bild die gesamte Breite des Elternelements einnimmt */
+            height: auto; /* Automatische Höhe beibehalten, um das Bild nicht zu verzerren */
+            border: 2px solid #ccc;
+            margin: 1%; /* Hier wird der Abstand zwischen den Bildern eingestellt */
+        }
+
+        main figcaption {
+            margin-top: 0.5em;
+            text-align: center;
+            color: #555;
+        }
+
+        h4,p {
+            margin-top: 1em; /* Erhöht den Abstand zwischen den Zeilen */
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        footer {
+            padding: 1em;
+            text-align: center;
+        }
+
+        footer a {
+            color: #000;
+        }
+
+        /*Hier kommt der kram für die Bedinungshilfe*/
+
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        #floating-btn {
+            background-color: #4CAF50;
+            color:  #000000;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content button {
+            border: none;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%; /* Volle Breite für die Buttons */
+            text-align: left; /* Linksbündig ausrichten */
+            transition: background-color 0.3s, color 0.3s; /* Hinzugefügte Transition für sanftere Farbänderungen */
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+            color: #000000; /* Dunklere Textfarbe beim Hovern */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CAFE ZUR BÄCKERGRUBE</h1>
+
+        <nav>
+            <a href="Startseite.html">Start</a>
+            <a href="">Angebot</a>
+            <a href="Feiern.html">Feiern</a>
+            <a href="Ueber_Uns.html">Über Uns</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Floating Button mit Dropdown -->
+    <div class="dropdown">
+        <button id="floating-btn">&#9660;</button>
+        <div class="dropdown-content" id="dropdown_menue">
+            <button onclick="readText()">VorleseFunktion</button>
+            <button onclick="stopReading()">stop</button>
+            <button onclick="adjustFontSize('increase')">Schrift vergrößern</button>
+            <button onclick="adjustFontSize('decrease')">Schrift verkleinern</button>
+            <button onclick="changeColors('#000000' , '#ffffff', '#ddd', '#000000')">Kontrastmodus</button>
+            <button onclick="changeColors('#e29d34', '#011880', '#ddd', '#000000')">Blaufilter</button>
+            <button onclick="changeColors('#ffffff', '#000000', '#ddd', '#000000')">Normaler Modus</button>
+        </div>
+    </div>
+
+    <div id="main_container">
+        <main>
+            <div id="text_block">
+                <h4>
+                    Täglich backen wir bei uns frische Torte, Kuchen und Gebäck, dies servieren wir Euch mit einem unserer aromatischen Kaffeespezialitäten. 
+                    Außerdem könnt ihr Euch bei uns über pikante Kleinigkeiten wie Flammkuchen, Quiche, belegte Brötchen und Schnittchen freuen. 
+                    Gerne könnt Ihr alles Außer Haus bestellen, kontaktiert uns dafür einfach.
+                </h4>
+                <p>
+                    Neben dem tollen Genusserlebnis, das wir euch mit unseren hausgemachten und liebevoll gestalteten Leckereien bieten möchten, 
+                    liegt uns auch die Qualität unserer Produkte sehr am Herzen.
+                    Unsere Brötchen sind ein Bäckerei-Produkt aus der Region und unsere Kaffeebohnen beziehen wir frisch aus der Kaffeerösterei Laboe
+                    Zudem sind wir darauf bedacht, unsere Speisen weitestgehend saisonal zu gestalten und unsere Produkte tierischer Herkunft 
+                    nachhaltig zu beziehen. Des Weiteren sind vegetarische und vegane Alternativen bei uns zu finden, sei es ein Frühstück oder 
+                    eine pflanzliche Milchalternative für das Getränk - sprecht uns gerne an und wir versuchen für euch die passende Leckerei zu finden.
+                </p>
+                
+                <h4>
+                    Bei Fragen oder Wünschen könnt Ihr uns immer gern ansprechen! Wir freuen uns auf Euren Besuch!
+                </h4>
+            </div>
+
+            <div id="bildContainer">
+                <figure id="kirschstreuselkuchen">
+                    <img src="pictures/kirschstreuselkuchenjpg.jpg" alt="Bild">
+                    <figcaption>Anschnitt eines Kirschstreuselkuchens</figcaption>
+                </figure>
+            </div>
+        </main>
+    
+        <footer>
+            <p>Cafe zur Bäckergrube <br> Teichtorstraße 5, 24321 Lütjenburg</p>
+            <a href="Impressum.html"> Impressum und Datenschutz</a>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

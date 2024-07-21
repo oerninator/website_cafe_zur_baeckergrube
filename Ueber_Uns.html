@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cafe zur Bäckergrube</title>
+    <!-- Hier können weitere Meta-Tags, Stylesheets und Skripte eingefügt werden -->
+    <style>
+        /* Hier können benutzerdefinierte CSS-Stile eingefügt werden */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        header {
+            padding: 1em;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header h1 {
+            color: #000;
+            margin-bottom: 0.5em;
+        }
+
+        header nav {
+            margin-top: 0.8em; /* Erhöhter Abstand zwischen den Links */
+        }
+
+        header a {
+            color: #000000; /* Geänderte Linkfarbe */
+            text-decoration: none;
+            margin: 0.5em; /* Erhöhter Abstand zwischen den Links */
+        }
+
+        hr {
+            margin: 1em 0;
+            border: none;
+            border-top: 2px solid #333;
+        }
+
+        #main_container {
+            width: 94%;
+            margin: 0 auto;
+        }
+
+        main {
+            padding: 1em;
+            display: flex;
+            flex-wrap: wrap; /* Geändert: Erlaubt Umbruch auf die nächste Zeile */
+            justify-content: center; /* Zentriert die Bilder horizontal */
+            align-items: center;
+        }
+
+        #bildContainer, #text_block {
+            width: 48%; /* Hinzugefügt: Jedes Kind nimmt 48% der Breite ein */
+        }
+
+        #text_block {
+            margin-top: 7%;
+        }
+
+        #kirschstreuselkuchen img {
+            width: 100%; /* Ändere dies auf 100%, wenn du möchtest, dass das Bild die gesamte Breite des Elternelements einnimmt */
+            height: auto; /* Automatische Höhe beibehalten, um das Bild nicht zu verzerren */
+            border: 2px solid #ccc;
+            margin: 1%; /* Hier wird der Abstand zwischen den Bildern eingestellt */
+        }
+
+        main figcaption {
+            margin-top: 0.5em;
+            text-align: center;
+        }
+
+        h4,p {
+            margin-top: 1em; /* Erhöht den Abstand zwischen den Zeilen */
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        #geschichte_cafe {
+            width: 72%;
+        }
+
+        footer {
+            padding: 1em;
+            text-align: center;
+        }
+
+        footer a {
+            color: #000;
+        }
+
+        /*Hier kommt der kram für die Bedinungshilfe*/
+
+        .dropdown {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+        }
+
+        #floating-btn {
+            background-color: #4CAF50;
+            color:  #000000;
+            border: none;
+            border-radius: 50%;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background-color: #f9f9f9;
+            min-width: 160px;
+            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+            z-index: 1;
+            border-radius: 5px;
+        }
+
+        .dropdown-content button {
+            border: none;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
+            width: 100%; /* Volle Breite für die Buttons */
+            text-align: left; /* Linksbündig ausrichten */
+            transition: background-color 0.3s, color 0.3s; /* Hinzugefügte Transition für sanftere Farbänderungen */
+        }
+
+        .dropdown-content button:hover {
+            background-color: #ddd;
+            color: #000000; /* Dunklere Textfarbe beim Hovern */
+        }
+
+        .dropdown:hover .dropdown-content {
+            display: block;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>CAFE ZUR BÄCKERGRUBE</h1>
+
+        <nav>
+            <a href="Startseite.html">Start</a>
+            <a href="Angebot.html">Angebot</a>
+            <a href="Feiern.html">Feiern</a>
+            <a href="">Über Uns</a>
+        </nav>
+    </header>
+
+    <hr>
+
+    <!-- Floating Button mit Dropdown -->
+    <div class="dropdown">
+        <button id="floating-btn">&#9660;</button>
+        <div class="dropdown-content" id="dropdown_menue">
+            <button onclick="readText()">VorleseFunktion</button>
+            <button onclick="stopReading()">stop</button>
+            <button onclick="adjustFontSize('increase')">Schrift vergrößern</button>
+            <button onclick="adjustFontSize('decrease')">Schrift verkleinern</button>
+            <button onclick="changeColors('#000000' , '#ffffff', '#ddd', '#000000')">Kontrastmodus</button>
+            <button onclick="changeColors('#e29d34', '#011880', '#ddd', '#000000')">Blaufilter</button>
+            <button onclick="changeColors('#ffffff', '#000000', '#ddd', '#000000')">Normaler Modus</button>
+        </div>
+    </div>
+
+    <div id="main_container">
+        <main>
+            <div id="bildContainer">
+                <figure id="kirschstreuselkuchen">
+                    <img src="pictures/petra_und_birte.jpg" alt="Bild">
+                    <figcaption>Petra und Birte draußen vor Ihrem Cafe</figcaption>
+                </figure>
+            </div>
+        
+            <div id="text_block">
+                <p>
+                    Wir sind Petra und Birte. Gemeinsam haben wir uns mit dem Café zur Bäckergrube einen großen Traum erfüllt und einen kleinen 
+                    Wohlfühlort in Lütjenburg geschaffen, an dem wir Euch mit selbstgemachten Leckereien verwöhnen möchten.
+                </p>
+                
+                <h4>
+                    Kommt vorbei, wir freuen uns auf Euren Besuch!
+                </h4>
+            </div>
+
+            <div id="geschichte_cafe">
+                <h4>
+                    Die Geschichte vom Café zur Bäckergrube
+                </h4>
+
+                <p>
+                    1876 kaufte Wilhelm Johann Detlef Wegener das Grundstück in der Teichtorstraße. Die Bäckergrube befand sich seitdem über 
+                    vier Generationen in der Hand der Familie Wegener.
+                    Die Bäckerei und die Schenke (heute Café) haben schon früher bestanden. Es war ein sogenannter Ausspann, mit 
+                    Pferd und Wagen kam die Kundschaft in die Stadt. 
+                </p>
+
+                <p>
+                    1928 übernahm Hans Wegener die Bäckerei, das Unternehmen wurde modernisiert. Zu dieser Zeit war die 
+                    Bäckergrube eine Gaststätte im kleinen Rahmen. Als Hans sen. 1961 verstarb, hatten Hans jun. und seine Frau Erna den 
+                    Bäckereibetrieb und die Bäckergrube bereits übernommen. Die Bäckergrube bekam durch Um- und Ausbauten ihren Cafécharakter.
+                </p>
+
+                <p>
+                    1966 übernahm Hans-Wilhelm Wegener, als jüngster Bäckermeister im Kreis Plön, den Betrieb in der Teichtorstraße. 
+                    Zunächst führte er den Betrieb gemeinsam mit seiner Mutter Erna, von 1974 bis 2015 gemeinsam mit seiner Ehefrau Ellen Wegener.
+                     1992 wurde das Café erfolgreich umgebaut und modernisiert, die Bäckergrube bekam ein neues Gesicht. 
+                     Aus Alters- und Gesundheitsgründen wurde der Betrieb in den Jahren 2006 bis 2018 von Familie Wegener verpachtet. 
+                     Im Jahr 2019 wurde die Immobilie in der Teichtorstraße 5 an Herrn Dr. Kopplin aus Schönberg verkauft.
+                </p>
+            </div>
+        </main>
+    
+        <footer>
+            <p>Cafe zur Bäckergrube <br> Teichtorstraße 5, 24321 Lütjenburg</p>
+            <a href="Impressum.html"> Impressum und Datenschutz</a>
+        </footer>
+    </div>
+
+    <script src="script.js"> </script>
+
+</body>
+
+</html>
