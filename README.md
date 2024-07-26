@@ -33,6 +33,7 @@ cafe-zur-baeckergrube/
 ├── pictures/
 │   ├── torte.jpg
 │   ├── fassade_cafe.jpg
+│   └── ...
 ├── Angebot.html
 ├── Angebot.jpeg
 ├── Feiern.html
@@ -81,11 +82,11 @@ Feel free to contribute to this project by creating pull requests or reporting i
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+This project is licensed under the Apache License. See the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-For any questions or suggestions, please contact us at info@cafezurbaeckergrube.de.
+For any questions or suggestions, please contact me at arneseufert@web.de.
 
 ---
 
